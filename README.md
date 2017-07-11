@@ -31,4 +31,4 @@ Training
 
 # Running Model
 
-In the demo.py file set the path to test.prototxt and caffemodel trained and give path to input image to variable im_names. Run demo.py file. The output image will be saved.
+In the demo.py file set the path to test.prototxt and .caffemodel trained and give path to input image to variable im_names. Run demo.py file. The output image will be saved.
