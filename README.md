@@ -1,9 +1,10 @@
 # logo_detection
 
+## Model Download
+Due to size of model greater than 50MB I uploaded it over google drive. Download the model from link ( https://drive.google.com/open?id=0BwSmgJK4UW13SGZrWjNVQUJ0c1E ) 
 
 
-
-SETUP 
+# SETUP 
 
 1. Setup Faster RCNN from the github repositery (https://github.com/rbgirshick/py-faster-rcnn).
 
@@ -19,7 +20,7 @@ SETUP
 
 
 
-Training
+# Training
 
 1. Rename the last fuly connected layer.
 
