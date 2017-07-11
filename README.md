@@ -28,3 +28,7 @@ Training
 3. Rename the layers back to their original names. Set the parameters in solver.prototxt. Due to low computation resources we trained our model on lowest minimum parameters.
 
 4. 2nd fine tune. Set the paths to 1st fine tuned model to get it's weight.  (./tools/train_net.py --gpu 0 --weights output/logo/train/zf_faster_rcnn_iter_0.caffemodel --imdb logo_train --cfg experiments/cfgs/config.yml --solver models/logo/solver.prototxt --iter 10000 )
+
+# Running Model
+
+In the demo.py file set the path to test.prototxt and caffemodel trained and give path to input image to variable im_names. Run demo.py file. The output image will be saved.
