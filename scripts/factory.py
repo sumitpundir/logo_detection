@@ -31,6 +31,8 @@ for year in ['2015']:
     for split in ['test', 'test-dev']:
         name = 'coco_{}_{}'.format(year, split)
         __sets[name] = (lambda split=split, year=year: coco(split, year))
+        
+#Setting up logo dataset created 
 from datasets.logo import logo
 logo_devkit_path = './data/logo'
 for split in ['train']:
