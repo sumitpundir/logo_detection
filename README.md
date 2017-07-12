@@ -1,5 +1,7 @@
 # logo_detection
 
+## ---> THE OUTPUT OF ALL TEST DATASET IMAGES IS IN output_images FOLDER 
+
 ## Model Download
 Due to size of model greater than 50MB I uploaded it over google drive. Download the model from link ( https://drive.google.com/open?id=0BwSmgJK4UW13SGZrWjNVQUJ0c1E ) 
 
