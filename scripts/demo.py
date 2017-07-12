@@ -23,22 +23,11 @@ import numpy as np
 import scipy.io as sio
 import caffe, os, sys, cv2
 import argparse
-'''
-#CLASSES = ('__background__',
-           'aeroplane', 'bicycle', 'bird', 'boat',
-           'bottle', 'bus', 'car', 'cat', 'chair',
-           'cow', 'diningtable', 'dog', 'horse',
-           'motorbike', 'person', 'pottedplant',
-           'sheep', 'sofa', 'train', 'tvmonitor')
-'''
-#CLASSES = ('__background__', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27')
-CLASSES = ('__background__', 'Adidas', 'Apple', 'BMW', 'Citroen', 'Cocacola', 'DHL', 'Fedex', 'Ferrari', 'Ford', 'Google', 'Heineken', 'HP', 'McDonalds', 'Mini', 'Nbc', 'Nike', 'Pepsi', 'Porsche', 'Puma', 'RedBull', 'Sprite', 'Starbucks', 'Intel', 'Texaco', 'Unicef', 'Vodafone', 'Yahoo')
-#test_data_output = open('/home/ubuntu/logo/py-faster-rcnn/out_labels.txt', 'a')
 
-NETS = {'vgg16': ('VGG16',
-                  'VGG16_faster_rcnn_final.caffemodel'),
-        'zf': ('ZF',
-                  'ZF_faster_rcnn_final.caffemodel')}
+#Rename classes mapping to the corresponding labels
+CLASSES = ('__background__', 'Adidas', 'Apple', 'BMW', 'Citroen', 'Cocacola', 'DHL', 'Fedex', 'Ferrari', 'Ford', 'Google', 'Heineken', 'HP', 'McDonalds', 'Mini', 'Nbc', 'Nike', 'Pepsi', 'Porsche', 'Puma', 'RedBull', 'Sprite', 'Starbucks', 'Intel', 'Texaco', 'Unicef', 'Vodafone', 'Yahoo')
+
+
 
 
 def vis_detections(im, class_name, dets, image_name, thresh=0.5):
@@ -73,7 +62,9 @@ def vis_detections(im, class_name, dets, image_name, thresh=0.5):
     plt.axis('off')
     plt.tight_layout()
     #saved_image = "/static/"+str(coun)+str(tf)+"image.jpg"
-    print "true1"
+    
+           
+    #classification output of all test images      
     test_data_output = open('out_labels.txt', 'a')
     print >> test_data_output, image_name, class_name 
     test_data_output.close()
@@ -129,18 +120,11 @@ if __name__ == '__main__':
     cfg.TEST.HAS_RPN = True  # Use RPN for proposals
 
     args = parse_args()
-    '''
-    prototxt = os.path.join(cfg.MODELS_DIR, NETS[args.demo_net][0],
-                            'faster_rcnn_alt_opt', 'faster_rcnn_test.pt')
-    caffemodel = os.path.join(cfg.DATA_DIR, 'faster_rcnn_models',
-                              NETS[args.demo_net][1])
-    '''
+    
     prototxt = "/home/ubuntu/logo/py-faster-rcnn/models/logo/test.prototxt"
     caffemodel = "/home/ubuntu/logo/py-faster-rcnn/output/zf_faster_rcnn_iter_10000.caffemodel"
 
-    if not os.path.isfile(caffemodel):
-        raise IOError(('{:s} not found.\nDid you run ./data/script/'
-                       'fetch_faster_rcnn_models.sh?').format(caffemodel))
+    
     
     if args.cpu_mode:
         caffe.set_mode_cpu()
