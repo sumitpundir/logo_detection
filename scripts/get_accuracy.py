@@ -16,9 +16,7 @@ for i in flickr_data_namestest:
 	     
              if i.split('/')[-1].split('.jpg')[0].strip() == j.split('.jpg')[0].strip() and i.split('/')[-1].split('.jpg')[-1].strip() == j.split('.jpg')[-1].strip():
 		chhm += 1
-		#print chhm
-		#print "first:", i.split('/')[-1].split('.jpg')[0].strip(), j.split('.jpg')[0].strip()
-             	#print "second:", i.split('/')[-1].split('.jpg')[-1].strip(), j.split('.jpg')[-1].strip()
+		
         flickr_data_test.close()
 #print total
 print "accuracy:", float(chhm*100/total)
